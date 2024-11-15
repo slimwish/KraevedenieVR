@@ -8,30 +8,35 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class RayCastController : MonoBehaviour
 {
     [SerializeField] private XRRayInteractor _interactor;
-    [SerializeField] private InputActionProperty _input;
+    [SerializeField] private InputActionProperty _triggerInput;
     private Interacting _interacting;
-    private Interacting _interactingBefore;
 
     private void FixedUpdate()
     {
-        if (_input.action.triggered)
-        {
             RaycastHit _raycast;
 
             _interactor.TryGetCurrent3DRaycastHit(out _raycast);
+
+            if (_interacting != null && _raycast.transform != _interacting.transform)
+            {
+
+                _interacting.InteractStopRay();
+                _interacting.InteractTriggerStopRay();
+            }
 
             if (_raycast.transform != null)
             {
                 if (_raycast.transform.gameObject.TryGetComponent<Interacting>(out _interacting))
                 {
-                    _interacting.InteractRay();
+                    if (_triggerInput.action.triggered)
+                    {
+                        _interacting.InteractTriggerRay();
+                    }
+                    else
+                    {
+                        _interacting.InteractRay();
+                    }
                 }
             }
-
-            else if (_interacting != null)
-            {
-                _interacting.InteractStopRay();
-            }
-        }
     }
 }

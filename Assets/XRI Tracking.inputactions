@@ -1001,7 +1001,7 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Move",
+                    "name": "Axis",
                     "type": "Value",
                     "id": "9693e25f-8a4f-4aed-842f-3961243c69a1",
                     "expectedControlType": "Vector2",
@@ -1079,8 +1079,8 @@
                     "path": "<XRController>{LeftHand}/{Primary2DAxis}",
                     "interactions": "",
                     "processors": "StickDeadzone",
-                    "groups": "Continuous Move",
-                    "action": "Move",
+                    "groups": "",
+                    "action": "Axis",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -1797,7 +1797,7 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Move",
+                    "name": "Axis",
                     "type": "Value",
                     "id": "00a4dc9f-1ee6-4349-b0e9-72d5dccaadd6",
                     "expectedControlType": "Vector2",
@@ -1876,7 +1876,7 @@
                     "interactions": "",
                     "processors": "StickDeadzone",
                     "groups": "Continuous Move",
-                    "action": "Move",
+                    "action": "Axis",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },

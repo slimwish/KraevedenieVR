@@ -11,9 +11,17 @@ public class ColorChanger : Interacting
     }
     public override void InteractRay()
     {
-        _mesh.material.color = Color.red;
+        //_mesh.material.color = Color.red;
     }
     public override void InteractStopRay()
+    {
+        //_mesh.material.color = Color.white;
+    }
+    public override void InteractTriggerRay()
+    {
+        _mesh.material.color = Color.red;
+    }
+    public override void InteractTriggerStopRay()
     {
         _mesh.material.color = Color.white;
     }
