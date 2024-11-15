@@ -288,7 +288,6 @@ GameObject:
   - component: {fileID: 453202113}
   - component: {fileID: 453202112}
   - component: {fileID: 453202111}
-  - component: {fileID: 453202116}
   m_Layer: 0
   m_Name: Right Controller
   m_TagString: Untagged
@@ -951,31 +950,6 @@ MonoBehaviour:
     m_Reference: {fileID: -6447266317303757838, guid: c348712bda248c246b8c49b3db54643f,
       type: 3}
   m_ButtonPressPoint: 0.5
---- !u!114 &453202116
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 453202109}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c18b8f48b7b79844bbe573e7e1c1dea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  actionProperty:
-    m_UseReference: 1
-    m_Action:
-      m_Name: Action Property
-      m_Type: 0
-      m_ExpectedControlType: 
-      m_Id: 851bab65-a26a-426a-9aa0-e412644bd734
-      m_Processors: 
-      m_Interactions: 
-      m_SingletonActionBindings: []
-      m_Flags: 0
-    m_Reference: {fileID: 187161793506945269, guid: c348712bda248c246b8c49b3db54643f,
-      type: 3}
 --- !u!1 &586993424
 GameObject:
   m_ObjectHideFlags: 0
