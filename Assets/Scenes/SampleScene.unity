@@ -964,18 +964,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _interactor: {fileID: 453202114}
-  _triggerInput:
+  _buttonRayInput:
     m_UseReference: 1
     m_Action:
-      m_Name: Trigger Input
+      m_Name: Button Ray Input
       m_Type: 0
       m_ExpectedControlType: 
-      m_Id: c1db06c8-b782-4094-b302-d0572ef4a61e
+      m_Id: 92620e1a-d02a-477f-bc84-b59d98aa6fea
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
       m_Flags: 0
     m_Reference: {fileID: 83097790271614945, guid: c348712bda248c246b8c49b3db54643f,
+      type: 3}
+  _buttonSelect:
+    m_UseReference: 1
+    m_Action:
+      m_Name: Button Select
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: b8aefe6b-0255-473b-9bb0-3a9faf466547
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 187161793506945269, guid: c348712bda248c246b8c49b3db54643f,
       type: 3}
 --- !u!1 &586993424
 GameObject:
@@ -1061,7 +1074,7 @@ MonoBehaviour:
   _mainCamera: {fileID: 1842063502}
   _deadZoneRegister: 0.2
   _sensRotation: 2
-  _speed: 5
+  _speed: 2
   _mainMoveInput:
     m_UseReference: 1
     m_Action:
