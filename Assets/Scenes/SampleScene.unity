@@ -1060,6 +1060,8 @@ MonoBehaviour:
   _mainObject: {fileID: 586993429}
   _mainCamera: {fileID: 1842063502}
   _deadZoneRegister: 0.2
+  _sensRotation: 2
+  _speed: 5
   _mainMoveInput:
     m_UseReference: 1
     m_Action:

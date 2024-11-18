@@ -1,15 +1,31 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEditor.Search;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.XR.Interaction.Toolkit;
 
-public class RayCastController : MonoBehaviour
+public class RayCastInteractive : MonoBehaviour
 {
     [SerializeField] private XRRayInteractor _interactor;
-    [SerializeField] private InputActionProperty _triggerInput;
+
+    [SerializeField] private InputActionProperty _buttonRayInput;
+
+    [SerializeField] private InputActionProperty _buttonSelect;
+
     private Interacting _interacting;
+    private void Update()
+    {
+        if (_buttonRayInput.action.triggered)
+        {
+            if(_interacting != null) _interacting.InteractTriggerRay();
+        }
+        if (_buttonSelect.action.triggered)
+        {
+            if(_interacting != null) _interacting.Interact();
+        }
+    }
 
     private void FixedUpdate()
     {
@@ -19,7 +35,6 @@ public class RayCastController : MonoBehaviour
 
             if (_interacting != null && _raycast.transform != _interacting.transform)
             {
-
                 _interacting.InteractStopRay();
                 _interacting.InteractTriggerStopRay();
             }
@@ -28,14 +43,7 @@ public class RayCastController : MonoBehaviour
             {
                 if (_raycast.transform.gameObject.TryGetComponent<Interacting>(out _interacting))
                 {
-                    if (_triggerInput.action.triggered)
-                    {
-                        _interacting.InteractTriggerRay();
-                    }
-                    else
-                    {
                         _interacting.InteractRay();
-                    }
                 }
             }
     }

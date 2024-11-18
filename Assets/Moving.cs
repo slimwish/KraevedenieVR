@@ -25,7 +25,6 @@ public class Moving : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(Time.deltaTime);
         _axisVector = _mainMoveInput.action.ReadValue<Vector2>();
         float rotation = _mainRotationInput.action.ReadValue<Vector2>().x;
 
@@ -42,8 +41,7 @@ public class Moving : MonoBehaviour
 
                 _isGetDirection = true;
             }
-            _mainObject.velocity = _axisVector.y * _movingDirectionForward * _speed * 100 * Time.deltaTime;
-            _mainObject.velocity += _axisVector.x * _movingDirectionRight * _speed * 100 * Time.deltaTime;
+            _mainObject.velocity = ((_axisVector.y * _movingDirectionForward) + (_axisVector.x * _movingDirectionRight)) * _speed;
         }
         else
         {
@@ -52,7 +50,6 @@ public class Moving : MonoBehaviour
             _isGetDirection = false;
         }
         
-        // _mainObject.velocity = Vector3.zero;
         if (rotation < -_deadZoneRegister || rotation > _deadZoneRegister)
         {
             _mainObject.transform.Rotate(0, rotation * _sensRotation * 100 * Time.deltaTime, 0, Space.World);
