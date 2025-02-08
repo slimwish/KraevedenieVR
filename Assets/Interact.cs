@@ -6,9 +6,9 @@ using UnityEngine;
 
 public abstract class Interacting : MonoBehaviour
 {
-    public abstract void Interact();
-    public abstract void InteractRay();
-    public abstract void InteractStopRay();
-    public abstract void InteractTriggerRay();
-    public abstract void InteractTriggerStopRay();
+    public abstract void Interact(GameObject getGameObject);
+    public abstract void InteractRay(GameObject getGameObject);
+    public abstract void InteractStopRay(GameObject getGameObject);
+    public abstract void InteractTriggerRay(GameObject getGameObject);
+    public abstract void InteractTriggerStopRay(GameObject getGameObject);
 }
