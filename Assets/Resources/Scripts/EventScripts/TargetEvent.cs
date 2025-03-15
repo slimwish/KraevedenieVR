@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class TargetEvent : TargetMain
+public class TargetEvent : Interacting
 {
     [SerializeField] private Button _teleportButton;
 
@@ -14,23 +14,26 @@ public class TargetEvent : TargetMain
     [SerializeField] private string _descriptionText;
     [SerializeField] private Sprite _sprite;
 
+    [SerializeField] private AnimationClip _animClip;
+    [SerializeField] private Material _baseMaterial;
+    [SerializeField] private Material _activeMaterial;
+    [SerializeField] private ExplorerInfo _target;
+    [SerializeField] private Canvas _canvas;
+    private void Start()
+    {
+        gameObject.GetComponent<MeshRenderer>().material = _baseMaterial;
+    }
     public override void Interact(GameObject getGameObject)
     {
 
     }
     public override void InteractRay(GameObject getGameObject)
     {
-        foreach (MeshRenderer meshRenderer in GetComponentsInChildren<MeshRenderer>())
-        {
-            meshRenderer.material = gameObject.GetComponent<TargetMain>().GetActiveMaterial;
-        }
+        gameObject.GetComponent<MeshRenderer>().material = _activeMaterial;
     }
     public override void InteractStopRay(GameObject getGameObject)
     {
-        foreach (MeshRenderer meshRenderer in GetComponentsInChildren<MeshRenderer>())
-        {
-            meshRenderer.material = gameObject.GetComponent<TargetMain>().GetBaseMaterial;
-        }
+        gameObject.GetComponent<MeshRenderer>().material = _baseMaterial;
     }
     public override void InteractTriggerRay(GameObject getGameObject)
     {

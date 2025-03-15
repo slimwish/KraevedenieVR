@@ -18,10 +18,16 @@ public class RayCastInteractive : MonoBehaviour
 
     [SerializeField] private GameObject _mainGameObject;
 
-    [SerializeField] private XRInteractorLineVisual _lineRenderer;
+    [SerializeField] private LineRenderer _lineRenderer;
 
+    [SerializeField] private Gradient _lineColor;
 
     private Interacting _interacting;
+
+    private void Start()
+    {
+        _lineRenderer.colorGradient = _lineColor;
+    }
 
     private void Update()
     {
@@ -40,22 +46,28 @@ public class RayCastInteractive : MonoBehaviour
         RaycastHit _raycast;
 
         _interactor.TryGetCurrent3DRaycastHit(out _raycast);
-
-        if (_interacting != null && _raycast.transform != _interacting.transform)
-        {
-            _interacting.InteractStopRay(_mainGameObject);
-            _interacting.InteractTriggerStopRay(_mainGameObject);
-        }
-
         if (_raycast.transform != null)
         {
-            if (_raycast.transform.gameObject.TryGetComponent<Interacting>(out _interacting))
+            if (_interacting != null && _raycast.transform != _interacting.transform)
             {
-                _interacting.InteractRay(_mainGameObject);
+                _interacting.InteractStopRay(_mainGameObject);
+                _interacting.InteractTriggerStopRay(_mainGameObject);
+            }
+            if (_interacting == null || _interacting.transform != _raycast.transform)
+            {
+                if (_raycast.transform.gameObject.TryGetComponent<Interacting>(out _interacting))
+                {
+                    _interacting.InteractRay(_mainGameObject);
+                }
             }
         }
         else
         {
+            if (_interacting != null)
+            {
+                _interacting.InteractStopRay(_mainGameObject);
+                _interacting.InteractTriggerStopRay(_mainGameObject);
+            }
             _interacting = null;
         }
     }
