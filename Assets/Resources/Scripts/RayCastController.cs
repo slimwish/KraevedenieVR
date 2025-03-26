@@ -48,7 +48,6 @@ public class RayCastInteractive : MonoBehaviour
         
         RaycastResult _raycastResult;
         
-        _interactor.TryGetCurrent3DRaycastHit(out _raycast);
         _interactor.TryGetCurrentUIRaycastResult(out _raycastResult);
 
         if (_raycastResult.gameObject != null)
