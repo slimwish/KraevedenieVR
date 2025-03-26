@@ -30,11 +30,17 @@ public class TargetEvent : Interacting
     }
     public override void InteractRay(GameObject getGameObject)
     {
-        gameObject.GetComponent<MeshRenderer>().material = _activeMaterial;
+        foreach (MeshRenderer renderer in gameObject.GetComponentsInChildren<MeshRenderer>())
+        {
+            renderer.material = _activeMaterial;
+        }
     }
     public override void InteractStopRay(GameObject getGameObject)
     {
-        gameObject.GetComponent<MeshRenderer>().material = _baseMaterial;
+        foreach (MeshRenderer renderer in gameObject.GetComponentsInChildren<MeshRenderer>())
+        {
+            renderer.material = _baseMaterial;
+        }
     }
     public override void InteractTriggerRay(GameObject getGameObject)
     {
