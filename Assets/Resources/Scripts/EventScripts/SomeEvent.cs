@@ -10,6 +10,7 @@ public class SomeEvent : Interacting
 {
     [SerializeField] private GameObject _infoOnCanvas;
     [SerializeField] private Button _teleportButton;
+    [SerializeField] private Button _teleportTourButton;
 
     [SerializeField] private List<GameObject> _regionTargets;
     [SerializeField] private GameObject _map;
@@ -62,6 +63,7 @@ public class SomeEvent : Interacting
         }
 
         _teleportButton.gameObject.SetActive(false); // выключение кнопки телепорта в панораму чтоб раньше времени не показывалась
+        _teleportTourButton.gameObject.SetActive(false);
 
         _canvasHandler.SetInfo(_nameText, _descriptionText, _sprite); // выставление текста и изображение на канвас
 

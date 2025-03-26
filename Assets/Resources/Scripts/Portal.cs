@@ -11,8 +11,6 @@ public class Portal : MonoBehaviour
 
     [SerializeField] private GameObject _player;
 
-    //[SerializeField] private Collider
-
     public void ActivatePortal()
     {
         if (GetComponent<Collider>().enabled == false)
@@ -33,6 +31,11 @@ public class Portal : MonoBehaviour
         {
             StartCoroutine(LoadScenePortalAsync());
         }
+    }
+
+    public void SetSceneName(string sceneName)
+    {
+        _sceneName = sceneName;
     }
 
     private IEnumerator LoadScenePortalAsync()

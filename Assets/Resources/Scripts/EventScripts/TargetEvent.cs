@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class TargetEvent : Interacting
 {
     [SerializeField] private Button _teleportButton;
+    [SerializeField] private Button _teleportTourButton;
 
     [SerializeField] private CanvasHandler _canvasHandler;
 
@@ -38,6 +39,7 @@ public class TargetEvent : Interacting
     public override void InteractTriggerRay(GameObject getGameObject)
     {
         _teleportButton.gameObject.SetActive(true); // включение кнопачке для включение портала
+        _teleportTourButton.gameObject.SetActive(true);
         _canvasHandler.SetInfo(_nameText, _descriptionText, _sprite); // выставление текста и изображение на канвас
     }
     public override void InteractTriggerStopRay(GameObject getGameObject)

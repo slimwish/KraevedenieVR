@@ -8,10 +8,15 @@ public class FollowPlayer : MonoBehaviour
     [SerializeField] private float _radiusFromPlayer;
     [SerializeField] private float _underCameraStep;
     [SerializeField] private float _deadZonePos;
+    [SerializeField] private float _maxDistance;
 
     bool _isAnimate = false;
     void Update()
     {
+        if (Vector3.Distance(_playerCamera.transform.position, transform.position) > _maxDistance)
+        {
+            transform.position = _playerCamera.transform.position;
+        }
         Vector3 point = new Vector3(_playerCamera.transform.forward.x, 0, _playerCamera.transform.forward.z) * _radiusFromPlayer;
         //point = new Vector3(point.x, _playerCamera.transform.position.y, point.z);
         Vector3 newPosition = point + new Vector3(_playerCamera.transform.position.x, _playerCamera.transform.position.y - _underCameraStep, _playerCamera.transform.position.z);

@@ -7,6 +7,7 @@ public class BackButton : MonoBehaviour
 {
     [SerializeField] private GameObject _infoOnCanvas;
     [SerializeField] private Button _teleportButton;
+    [SerializeField] private Button _teleportTourButton;
 
     [SerializeField] private List<GameObject> _allTargets;
     [SerializeField] private GameObject _map;
@@ -26,6 +27,7 @@ public class BackButton : MonoBehaviour
         }
 
         _teleportButton.gameObject.SetActive(false);
+        _teleportTourButton.gameObject.SetActive(false);
 
         foreach (GameObject targets in _allTargets)
         {
