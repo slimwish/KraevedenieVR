@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Unity.Collections.LowLevel.Unsafe;
 using UnityEditor.Search;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -44,18 +45,22 @@ public class RayCastInteractive : MonoBehaviour
     private void FixedUpdate()
     {
         RaycastHit _raycast;
-
+        
+        RaycastResult _raycastResult;
+        
         _interactor.TryGetCurrent3DRaycastHit(out _raycast);
-        if (_raycast.transform != null)
+        _interactor.TryGetCurrentUIRaycastResult(out _raycastResult);
+
+        if (_raycastResult.gameObject != null)
         {
-            if (_interacting != null && _raycast.transform != _interacting.transform)
+            if (_interacting != null && _raycastResult.gameObject.transform != _interacting.transform)
             {
                 _interacting.InteractStopRay(_mainGameObject);
                 _interacting.InteractTriggerStopRay(_mainGameObject);
             }
-            if (_interacting == null || _interacting.transform != _raycast.transform)
+            if (_interacting == null || _interacting.transform != _raycastResult.gameObject.transform)
             {
-                if (_raycast.transform.gameObject.TryGetComponent<Interacting>(out _interacting))
+                if (_raycastResult.gameObject.TryGetComponent<Interacting>(out _interacting))
                 {
                     _interacting.InteractRay(_mainGameObject);
                 }
@@ -63,12 +68,32 @@ public class RayCastInteractive : MonoBehaviour
         }
         else
         {
-            if (_interacting != null)
+            _interactor.TryGetCurrent3DRaycastHit(out _raycast);
+
+            if (_raycast.transform != null)
             {
-                _interacting.InteractStopRay(_mainGameObject);
-                _interacting.InteractTriggerStopRay(_mainGameObject);
+                if (_interacting != null && _raycast.transform != _interacting.transform)
+                {
+                    _interacting.InteractStopRay(_mainGameObject);
+                    _interacting.InteractTriggerStopRay(_mainGameObject);
+                }
+                if (_interacting == null || _interacting.transform != _raycast.transform)
+                {
+                    if (_raycast.transform.gameObject.TryGetComponent<Interacting>(out _interacting))
+                    {
+                        _interacting.InteractRay(_mainGameObject);
+                    }
+                }
             }
-            _interacting = null;
+            else
+            {
+                if (_interacting != null)
+                {
+                    _interacting.InteractStopRay(_mainGameObject);
+                    _interacting.InteractTriggerStopRay(_mainGameObject);
+                }
+                _interacting = null;
+            }
+            }
         }
     }
-}
