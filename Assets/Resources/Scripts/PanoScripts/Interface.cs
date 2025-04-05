@@ -7,13 +7,16 @@ using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine.Video;
 
 public class Interface : MonoBehaviour
 {
     [SerializeField] private Slider _slider;
-    [SerializeField] private Button _button;
+    [SerializeField] private Button _pauseButton;
+    [SerializeField] private Button _teleportButton;
+    [SerializeField] private string _sceneName;
     [SerializeField] private Video _video;
     [SerializeField] private TextMeshProUGUI _currentTime;
     [SerializeField] private TextMeshProUGUI _duration;
@@ -22,7 +25,7 @@ public class Interface : MonoBehaviour
     private void Start()
     {
         _video.videoPlayer.clip = FindAnyObjectByType<DataBetweenScenes>().Info.clip;
-        _button.onClick.AddListener(delegate { _video.PlayAndPause(); });
+        _pauseButton.onClick.AddListener(delegate { _video.PlayAndPause(); });
         _duration.text = Convert.ToString((int)_video.videoPlayer.length);
     }
     private void Update()
@@ -44,5 +47,22 @@ public class Interface : MonoBehaviour
         _video.videoPlayer.Pause();
         _video.videoPlayer.time = _slider.value;
         _video.videoPlayer.Play();
+    }
+
+    public void LoadScene()
+    {
+        StartCoroutine(LoadSceneTerminalAsync());
+    }
+    private IEnumerator LoadSceneTerminalAsync()
+    {
+        AsyncOperation operation = SceneManager.LoadSceneAsync(_sceneName);
+
+        operation.allowSceneActivation = false;
+
+        while (!operation.isDone)
+        {
+            operation.allowSceneActivation = true;
+            yield return null;
+        }
     }
 }

@@ -25,6 +25,12 @@ public class Portal : MonoBehaviour
         }
     }
 
+    public void ActivatePortal(bool activate)
+    {
+        gameObject.GetComponent<MeshRenderer>().enabled = activate;
+        this.GetComponent<Collider>().enabled = activate;
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject == _player)
