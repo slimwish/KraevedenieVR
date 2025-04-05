@@ -10,21 +10,8 @@ using UnityEngine.Video;
 public class ExplorerInfo : ScriptableObject
 {
     public string Name;
-    public List<InfoText> Text;
-    public List<InfoImage> Image;
+    public string Description;
+    public Texture2D MainImage;
+    public List<Texture2D> ImageList;
     public VideoClip clip;
-}
-
-[Serializable]
-public class InfoText
-{
-    public int Index;
-    public string Text;
-}
-
-[Serializable]
-public class InfoImage
-{
-    public int Index;
-    public Texture2D Image;
 }

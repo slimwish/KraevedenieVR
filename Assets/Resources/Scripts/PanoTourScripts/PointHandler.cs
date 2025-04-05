@@ -7,6 +7,9 @@ public class PointHandler : Interacting
 {
     [SerializeField] GameObject _sphere;
     [SerializeField] Image _image;
+    [SerializeField] Color _disabled;
+    [SerializeField] Color _enabled;
+    int[] arr = new int[3];
 
     public override void Interact(GameObject getGameObject)
     {
@@ -15,12 +18,12 @@ public class PointHandler : Interacting
 
     public override void InteractRay(GameObject getGameObject)
     {
-        _image.color = new Color(255, 255, 255, 1);
+        _image.color = _enabled;
     }
 
     public override void InteractStopRay(GameObject getGameObject)
     {
-        _image.color = new Color(150, 150, 150, 0.7f);
+        _image.color = _disabled;
     }
 
     public override void InteractTriggerRay(GameObject getGameObject)
