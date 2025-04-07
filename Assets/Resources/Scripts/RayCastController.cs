@@ -13,29 +13,14 @@ public class RayCastInteractive : MonoBehaviour
 {
     [SerializeField] private XRRayInteractor _interactor;
 
-    [SerializeField] private InputActionProperty _buttonRayInput;
-
     [SerializeField] private InputActionProperty _buttonSelect;
 
     [SerializeField] private GameObject _mainGameObject;
 
-    [SerializeField] private LineRenderer _lineRenderer;
-
-    [SerializeField] private Gradient _lineColor;
-
     private Interacting _interacting;
-
-    private void Start()
-    {
-        _lineRenderer.colorGradient = _lineColor;
-    }
 
     private void Update()
     {
-        if (_buttonRayInput.action.triggered)
-        {
-            if (_interacting != null) _interacting.InteractTriggerRay(_mainGameObject);
-        }
         if (_buttonSelect.action.triggered)
         {
             if (_interacting != null) _interacting.Interact(_mainGameObject);
@@ -56,7 +41,6 @@ public class RayCastInteractive : MonoBehaviour
             if (_interacting != null && _raycastResult.gameObject.transform != _interacting.transform)
             {
                 _interacting.InteractStopRay(_mainGameObject);
-                _interacting.InteractTriggerStopRay(_mainGameObject);
             }
             if (_interacting == null || _interacting.transform != _raycastResult.gameObject.transform)
             {
@@ -71,7 +55,6 @@ public class RayCastInteractive : MonoBehaviour
             if (_interacting != null && _raycast.transform != _interacting.transform)
             {
                 _interacting.InteractStopRay(_mainGameObject);
-                _interacting.InteractTriggerStopRay(_mainGameObject);
             }
             if (_interacting == null || _interacting.transform != _raycast.transform)
             {
@@ -86,7 +69,6 @@ public class RayCastInteractive : MonoBehaviour
             if (_interacting != null)
             {
                 _interacting.InteractStopRay(_mainGameObject);
-                _interacting.InteractTriggerStopRay(_mainGameObject);
             }
             _interacting = null;
         }

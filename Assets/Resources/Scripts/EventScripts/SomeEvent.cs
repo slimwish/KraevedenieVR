@@ -24,8 +24,7 @@ public class SomeEvent : Interacting
     [SerializeField] private AnimationClip _animClip;
     [SerializeField] private Material _baseMaterial;
     [SerializeField] private Material _activeMaterial;
-    [SerializeField] private ExplorerInfo _target;
-    [SerializeField] private Canvas _canvas;
+    [SerializeField] private ExplorerInfo _explorerInfo;
 
     private Vector3 _defaultPositionOnMap;
     public Vector3 defaultPositionOnMap => _defaultPositionOnMap;
@@ -33,21 +32,9 @@ public class SomeEvent : Interacting
     private void Start()
     {
         _defaultPositionOnMap = transform.localPosition;
-        gameObject.GetComponent<MeshRenderer>().material = _baseMaterial;
     }
-    public override void Interact(GameObject getGameObject)
-    {
 
-    }
-    public override void InteractRay(GameObject getGameObject)
-    {
-        gameObject.GetComponent<MeshRenderer>().material = _activeMaterial;
-    }
-    public override void InteractStopRay(GameObject getGameObject)
-    {
-        gameObject.GetComponent<MeshRenderer>().material = _baseMaterial;
-    }
-    public override void InteractTriggerRay(GameObject getGameObject)
+    public override void Interact(GameObject getGameObject)
     {
         for (int i = 0; i < _map.transform.childCount; i++)
         {
@@ -72,8 +59,12 @@ public class SomeEvent : Interacting
             targets.SetActive(true);
         }
     }
-    public override void InteractTriggerStopRay(GameObject getGameObject)
+    public override void InteractRay(GameObject getGameObject)
     {
-        
-    } 
+        gameObject.GetComponent<MeshRenderer>().material = _activeMaterial;
+    }
+    public override void InteractStopRay(GameObject getGameObject)
+    {
+        gameObject.GetComponent<MeshRenderer>().material = _baseMaterial;
+    }
 }
