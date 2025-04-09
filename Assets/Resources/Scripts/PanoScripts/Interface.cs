@@ -24,7 +24,6 @@ public class Interface : MonoBehaviour
     
     private void Start()
     {
-        _video.videoPlayer.clip = FindAnyObjectByType<DataBetweenScenes>().Info.clip;
         _pauseButton.onClick.AddListener(delegate { _video.PlayAndPause(); });
         _duration.text = Convert.ToString((int)_video.videoPlayer.length);
     }

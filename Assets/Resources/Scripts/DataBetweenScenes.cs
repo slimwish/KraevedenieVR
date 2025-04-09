@@ -1,17 +1,14 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Video;
 
 public class DataBetweenScenes : MonoBehaviour
 {
-    public ExplorerInfo Info;
+    public VideoClip Clip;
    
-
-    public ExplorerInfo ReadInfo()
-    {
-        return Info;
-    }
     private void Awake()
     {
         DontDestroyOnLoad(this);

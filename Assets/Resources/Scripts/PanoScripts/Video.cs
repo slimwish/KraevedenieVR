@@ -11,6 +11,7 @@ public class Video : MonoBehaviour
 
     private void Start()
     {
+        videoPlayer.clip = FindAnyObjectByType<DataBetweenScenes>().Clip;
         videoPlayer.Play();
     }
 
