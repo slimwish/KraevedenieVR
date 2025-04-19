@@ -22,6 +22,10 @@ public class TargetEvent : Interacting
 
     [SerializeField] private VideoClip _video;
 
+    [SerializeField] private GameObject _artefact;
+
+    [SerializeField] private ArtefactSpawner _spawner;
+
     private DataBetweenScenes _dataBetweenScenes;
 
     private void Start()
@@ -35,6 +39,9 @@ public class TargetEvent : Interacting
         _teleportTourButton.gameObject.SetActive(true);
         _canvasHandler.SetInfo(_nameText, _descriptionText, _sprite); // выставление текста и изображение на канвас
         _dataBetweenScenes.Clip = _video;
+        _spawner.DestroyArtefact();
+        _spawner.SetArtefact(_artefact);
+        _spawner.SpawnArtefact();
     }
     public override void InteractRay(GameObject getGameObject)
     {
