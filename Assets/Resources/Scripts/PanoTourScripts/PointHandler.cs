@@ -6,10 +6,15 @@ using UnityEngine.UI;
 public class PointHandler : Interacting
 {
     [SerializeField] GameObject _sphere;
-    [SerializeField] Image _image;
     [SerializeField] Color _disabled;
     [SerializeField] Color _enabled;
 
+    private Image _image;
+
+    private void Start()
+    {
+        _image = gameObject.GetComponent<Image>();
+    }
     public override void Interact(GameObject getGameObject)
     {
         getGameObject.transform.position = _sphere.transform.position;
