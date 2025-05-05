@@ -25,10 +25,8 @@ public class SomeEvent : Interacting
     [SerializeField] private Material _baseMaterial;
     [SerializeField] private Material _activeMaterial;
 
-
     private Vector3 _defaultPositionOnMap;
     public Vector3 defaultPositionOnMap => _defaultPositionOnMap;
-
 
     private void Start()
     {

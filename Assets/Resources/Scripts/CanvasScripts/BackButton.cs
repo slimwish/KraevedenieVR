@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class BackButton : MonoBehaviour
 {
     [SerializeField] private GameObject _infoOnCanvas;
-    [SerializeField] private Button _teleportButton;
+    // [SerializeField] private Button _teleportButton;
     [SerializeField] private Button _teleportTourButton;
 
     [SerializeField] private List<GameObject> _allTargets;
@@ -26,7 +26,7 @@ public class BackButton : MonoBehaviour
             _infoOnCanvas.transform.GetChild(i).gameObject.SetActive(false);
         }
 
-        _teleportButton.gameObject.SetActive(false);
+        // _teleportButton.gameObject.SetActive(false);
         _teleportTourButton.gameObject.SetActive(false);
 
         foreach (GameObject targets in _allTargets)

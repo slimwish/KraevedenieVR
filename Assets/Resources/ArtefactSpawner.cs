@@ -7,12 +7,9 @@ public class ArtefactSpawner : MonoBehaviour
     private GameObject _artefact;
     private GameObject _createdArtifact;
 
-    public void SetArtefact(GameObject artefact)
+    public void SetAndCreateArtefact(GameObject artefact)
     {
         _artefact = artefact;
-    }
-    public void SpawnArtefact()
-    {
         if (_artefact != null)
         {
             _createdArtifact = Instantiate(_artefact, transform);
