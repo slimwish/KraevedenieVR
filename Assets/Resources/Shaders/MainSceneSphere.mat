@@ -21,7 +21,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: MainSceneSphere
-  m_Shader: {fileID: -6465566751694194690, guid: 64e1e6c6421970b4b9c469fb94fcc07f,
+  m_Shader: {fileID: -6465566751694194690, guid: 723371fb2bf8c7e4dbcdd1d811a4fc1d,
     type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -41,6 +41,18 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _SampleCubemap_2fde9465dc1e4bdaaaf16a16c3d02857_Cube_1_Cubemap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleCubemap_40b3843ce37d442b97cb62c815fa6b81_Cube_1_Cubemap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleCubemap_5f4fb000054243bdb5f780a67d6152bf_Cube_1_Cubemap:
+        m_Texture: {fileID: 8900000, guid: 14d99eba68deb5c419739be53229234f, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -55,15 +67,17 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Black: 0.275
+    - _Black: 0.475
     - _Contrast: 2
     - _EmissionGain: 1.25
     - _Gain: 0.5
     - _Gamma: 1.25
-    - _NoiseSclae: 5
+    - _GlobalCoef: 5
+    - _LocalCoef: 0
+    - _NoiseSclae: 1
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _White: 0.45
+    - _White: 0.625
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 0}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 0}

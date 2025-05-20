@@ -41,6 +41,14 @@ Material:
         m_Texture: {fileID: 2800000, guid: e1fca2c986ee9d94b8293345d714d011, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _SampleCubemap_40b3843ce37d442b97cb62c815fa6b81_Cube_1_Cubemap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleCubemap_5f4fb000054243bdb5f780a67d6152bf_Cube_1_Cubemap:
+        m_Texture: {fileID: 8900000, guid: 14d99eba68deb5c419739be53229234f, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -57,17 +65,19 @@ Material:
     m_Floats:
     - _Black: 0
     - _Contrast: 0
-    - _EmissionGain: 0.55
-    - _Gain: 31.39
-    - _Gamma: 1
+    - _EmissionGain: -0.35
+    - _Gain: 32.5
+    - _Gamma: 2.9
+    - _GlobalCoef: 1
+    - _LocalCoef: 1.75
     - _NoiseSclae: 0
     - _QueueControl: 0
     - _QueueOffset: 0
     - _TextureExp: 35
     - _White: 1
     m_Colors:
-    - _Color: {r: 0.5205386, g: 0.058823552, b: 0.99215686, a: 1}
-    - _EmissionColor: {r: 0.3816891, g: 0.2235294, b: 1, a: 0}
+    - _Color: {r: 0.4957981, g: 0, b: 1, a: 1}
+    - _EmissionColor: {r: 0.35180458, g: 0, b: 0.99215686, a: 0}
     - _Offset: {r: 0, g: 0, b: 0, a: 0}
-    - _Tilling: {r: 5, g: 4.57, b: 0, a: 0}
+    - _Tilling: {r: 0.8, g: 0.8, b: 0, a: 0}
   m_BuildTextureStacks: []
