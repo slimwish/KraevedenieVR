@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Portal
+  m_Name: PortalOverlay
   m_Shader: {fileID: -6465566751694194690, guid: 64e1e6c6421970b4b9c469fb94fcc07f,
     type: 3}
   m_Parent: {fileID: 0}
@@ -66,9 +66,9 @@ Material:
     - _Black: 0
     - _Contrast: 0
     - _EmissionGain: 0.3
-    - _Gain: 44.42
-    - _Gamma: 2.3
-    - _GlobalCoef: 1.5
+    - _Gain: 10.27
+    - _Gamma: 2.75
+    - _GlobalCoef: 1
     - _LocalCoef: 0.75
     - _NoiseSclae: 0
     - _QueueControl: 0
@@ -79,5 +79,5 @@ Material:
     - _Color: {r: 0.4957981, g: 0, b: 1, a: 1}
     - _EmissionColor: {r: 0.35180458, g: 0, b: 0.99215686, a: 0}
     - _Offset: {r: 0, g: 0, b: 0, a: 0}
-    - _Tilling: {r: 0.8, g: 0.8, b: 0, a: 0}
+    - _Tilling: {r: 0.015, g: 0.025, b: 0, a: 0}
   m_BuildTextureStacks: []
