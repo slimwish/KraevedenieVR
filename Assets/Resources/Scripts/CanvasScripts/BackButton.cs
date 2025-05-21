@@ -11,6 +11,7 @@ public class BackButton : MonoBehaviour
 
     [SerializeField] private List<GameObject> _allTargets;
     [SerializeField] private GameObject _map;
+    [SerializeField] private Portal _portal;
 
     public void backButton() // логика, обратная SomeEvent.InteractTriggerRay
     {
@@ -33,5 +34,7 @@ public class BackButton : MonoBehaviour
         {
             targets.SetActive(false);
         }
+
+        _portal.ActivatePortal(false); // деактивация портала
     }
 }

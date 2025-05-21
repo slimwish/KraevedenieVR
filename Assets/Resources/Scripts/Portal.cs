@@ -11,24 +11,19 @@ public class Portal : MonoBehaviour
 
     [SerializeField] private GameObject _player;
 
-    public void ActivatePortal()
+    public void ActivatePortal(bool activate)
     {
-        if (GetComponent<Collider>().enabled == false)
+        if (activate)
         {
             gameObject.GetComponent<MeshRenderer>().enabled = true;
             this.GetComponent<Collider>().enabled = true;
+            activate = false;
         }
         else
         {
             gameObject.GetComponent<MeshRenderer>().enabled = false;
             this.GetComponent<Collider>().enabled = false;
         }
-    }
-
-    public void ActivatePortal(bool activate)
-    {
-        gameObject.GetComponent<MeshRenderer>().enabled = activate;
-        this.GetComponent<Collider>().enabled = activate;
     }
 
     private void OnTriggerEnter(Collider other)
