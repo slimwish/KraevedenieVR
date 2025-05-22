@@ -68,6 +68,12 @@
         },
         {
             "m_Id": "9ec7318dbe6c45c6b2ae3fb1cb24b058"
+<<<<<<< Updated upstream
+=======
+        },
+        {
+            "m_Id": "3bde6f56b5344f86ae91dfa417fc1e91"
+>>>>>>> Stashed changes
         }
     ],
     "m_GroupDatas": [],
@@ -90,6 +96,23 @@
         {
             "m_OutputSlot": {
                 "m_Node": {
+<<<<<<< Updated upstream
+=======
+                    "m_Id": "3bde6f56b5344f86ae91dfa417fc1e91"
+                },
+                "m_SlotId": 0
+            },
+            "m_InputSlot": {
+                "m_Node": {
+                    "m_Id": "e07b333a3b764450a7acd4eb4e921ded"
+                },
+                "m_SlotId": 0
+            }
+        },
+        {
+            "m_OutputSlot": {
+                "m_Node": {
+>>>>>>> Stashed changes
                     "m_Id": "62095f2de4544329878b0d2dcef92b38"
                 },
                 "m_SlotId": 0
@@ -461,6 +484,46 @@
 }
 
 {
+<<<<<<< Updated upstream
+=======
+    "m_SGVersion": 1,
+    "m_Type": "UnityEditor.ShaderGraph.PositionNode",
+    "m_ObjectId": "3bde6f56b5344f86ae91dfa417fc1e91",
+    "m_Group": {
+        "m_Id": ""
+    },
+    "m_Name": "Position",
+    "m_DrawState": {
+        "m_Expanded": true,
+        "m_Position": {
+            "serializedVersion": "2",
+            "x": -357.0,
+            "y": -194.0,
+            "width": 208.0,
+            "height": 315.0
+        }
+    },
+    "m_Slots": [
+        {
+            "m_Id": "90f686d212a845d2a3adea087b9c51e2"
+        }
+    ],
+    "synonyms": [
+        "location"
+    ],
+    "m_Precision": 1,
+    "m_PreviewExpanded": true,
+    "m_DismissedVersion": 0,
+    "m_PreviewMode": 2,
+    "m_CustomColors": {
+        "m_SerializableColors": []
+    },
+    "m_Space": 1,
+    "m_PositionSource": 0
+}
+
+{
+>>>>>>> Stashed changes
     "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.BlockNode",
     "m_ObjectId": "3bff74b63d32452599bd807646e4d7d0",
@@ -710,6 +773,32 @@
 
 {
     "m_SGVersion": 0,
+<<<<<<< Updated upstream
+=======
+    "m_Type": "UnityEditor.ShaderGraph.Vector3MaterialSlot",
+    "m_ObjectId": "90f686d212a845d2a3adea087b9c51e2",
+    "m_Id": 0,
+    "m_DisplayName": "Out",
+    "m_SlotType": 1,
+    "m_Hidden": false,
+    "m_ShaderOutputName": "Out",
+    "m_StageCapability": 3,
+    "m_Value": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+    },
+    "m_DefaultValue": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+    },
+    "m_Labels": []
+}
+
+{
+    "m_SGVersion": 0,
+>>>>>>> Stashed changes
     "m_Type": "UnityEditor.ShaderGraph.Vector4MaterialSlot",
     "m_ObjectId": "96fd3bbd00414d3ab601a79b03cc3f5b",
     "m_Id": 0,
