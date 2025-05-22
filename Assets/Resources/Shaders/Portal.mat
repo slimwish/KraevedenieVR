@@ -68,14 +68,8 @@ Material:
     - _EmissionGain: 0.3
     - _Gain: 44.42
     - _Gamma: 2.3
-<<<<<<< Updated upstream
     - _GlobalCoef: 1.5
     - _LocalCoef: 0.75
-=======
-    - _GlobalCoef: 1
-    - _Lerp: 0.805
-    - _LocalCoef: 1
->>>>>>> Stashed changes
     - _NoiseSclae: 0
     - _QueueControl: 0
     - _QueueOffset: 0
@@ -85,9 +79,5 @@ Material:
     - _Color: {r: 0.4957981, g: 0, b: 1, a: 1}
     - _EmissionColor: {r: 0.35180458, g: 0, b: 0.99215686, a: 0}
     - _Offset: {r: 0, g: 0, b: 0, a: 0}
-<<<<<<< Updated upstream
     - _Tilling: {r: 0.8, g: 0.8, b: 0, a: 0}
-=======
-    - _Tilling: {r: 3, g: 3, b: 0, a: 0}
->>>>>>> Stashed changes
   m_BuildTextureStacks: []
